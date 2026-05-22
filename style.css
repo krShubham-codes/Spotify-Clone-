@@ -1,6 +1,5 @@
 * {
   font-family: "Montserrat", sans-serif;
-  /* margin: 0; */
   color: #fff;
   overflow: hidden;
 }
@@ -49,7 +48,6 @@ a {
     justify-content: center;
     height: 100px;
     padding: 0.5rem 0.75rem;
-    border-radius: 1rem;
 }
 
 .nav-option {
@@ -139,7 +137,6 @@ a {
     color: #fff;
 }
 
-
 .sticky-nav {
     position: sticky;
     top: 0;
@@ -157,7 +154,6 @@ a {
     cursor: pointer;
 }
 
-
 #for {
     background-color: #000;
     border-radius: 50%;
@@ -173,7 +169,6 @@ a {
     align-items: center;
     width: 45%;
     gap: 12px;
-    
 }
 
 .home-icon {
@@ -181,19 +176,6 @@ a {
     opacity: 0.7;
     cursor: pointer;
     flex-shrink: 0;
-}
-
-#search-bar {
-    width: 100%;
-    height: 2.5rem;
-    color: #fff;
-    background-color: #232323;
-    border: none;
-    border-radius: 20px;
-    padding-left: 2.5rem;
-    font-size: 0.9rem;
-    box-sizing: border-box;
-    outline: none;
 }
 
 .home-icon:hover {
@@ -215,7 +197,18 @@ a {
     pointer-events: none;
 }
 
-
+#search-bar {
+    width: 100%;
+    height: 2.5rem;
+    color: #fff;
+    background-color: #232323;
+    border: none;
+    border-radius: 20px;
+    padding-left: 2.5rem;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    outline: none;
+}
 
 .sticky-nav-options {
     display: flex;
@@ -227,7 +220,7 @@ a {
     margin-right: 1rem;
 }
 
-@media (max-width : 1000px) {
+@media (max-width: 1000px) {
     .hide {
         display: none;
     }
@@ -282,6 +275,8 @@ a {
 }
 
 .album {
+    display: flex;
+    align-items: center;
     width: 25%;
 }
 
@@ -295,9 +290,12 @@ a {
     width: 50%;
 }
 
-
 .controls {
     width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 4rem;
 }
 
 .player-control-icon {
@@ -342,18 +340,10 @@ a {
 .wallpaper {
     height: 67px;
     width: 60px;
-   display: absolute;
-   display: flex;
-   border-radius: 5px;
-   cursor: pointer;
-   margin: 9px 9px 5px;
-   
-}
-
-.album {
     display: flex;
-    /* justify-content: center; */
-    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 9px 9px 5px;
 }
 
 .song-name {
@@ -372,9 +362,9 @@ a {
 }
 
 .artist:hover {
-   opacity: 1;
-   text-decoration: underline;
-   cursor: pointer;
+    opacity: 1;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .song-name:hover {
@@ -384,8 +374,8 @@ a {
 
 .plus {
     padding: 0.5rem 1rem 0;
-     color: #fff;          /* icon color */
-    font-size: 1.25rem;    /* adjust size */
+    color: #fff;
+    font-size: 1.25rem;
     cursor: pointer;
     opacity: 0.7;
 }
@@ -405,16 +395,12 @@ a {
     opacity: 1;
 }
 
-
 .vol-bar {
     width: 25%;
     appearance: none;
     background-color: transparent;
     cursor: pointer;
     overflow: visible;
-    display: absolute;
-    justify-content: center;
-    align-items: center;
     margin-left: 8px;
 }
 
@@ -431,14 +417,6 @@ a {
     background-color: #1bd760;
     border-radius: 50%;
     margin-top: -0.30rem;
-}
-
-.controls {
-    width: 25%;
-    display: flex;          
-    align-items: center;
-    justify-content: end;
-    padding: 4rem;
 }
 
 .hover-play-wrapper {
@@ -478,4 +456,109 @@ a {
 
 .hover-play-wrapper:hover .card-img {
     filter: brightness(0.6);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+
+@media (max-width: 768px) {
+
+    .main {
+        flex-direction: column;
+        height: auto;
+        overflow: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .library {
+        display: none;
+    }
+
+    .main-content {
+        border-radius: 0;
+        padding: 0 1rem;
+        overflow: visible;
+        padding-bottom: 130px;
+    }
+
+    .music-player {
+        height: auto;
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .album {
+        width: 100%;
+        order: 1;
+    }
+
+    .player {
+        width: 100%;
+        order: 2;
+    }
+
+    .controls {
+        width: 100%;
+        order: 3;
+        justify-content: center;
+        padding: 0.25rem 0;
+    }
+
+    .card {
+        width: 120px;
+        padding: 1rem;
+        margin-left: 0.75rem;
+    }
+
+    .progress-bar {
+        width: 80%;
+    }
+
+    .vol-bar {
+        display: none;
+    }
+
+    .sticky-nav {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0.5rem 0;
+    }
+
+    .search {
+        width: 100%;
+        order: 2;
+    }
+
+    .sticky-nav-options {
+        order: 3;
+    }
+
+    .sticky-nav-icons {
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .card {
+        width: 100px;
+        padding: 0.75rem;
+    }
+
+    .player-control-icon {
+        margin-right: 1rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .control-icons {
+        font-size: 1rem;
+        margin-left: 6px;
+    }
 }
